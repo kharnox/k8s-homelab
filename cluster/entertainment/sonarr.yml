@@ -3,41 +3,37 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: sonarr
-  namespace: entertainment
+  namespace: entertainment 
 spec:
-  releaseName: sonarr
-  targetNamespace: flux 
-  timeout: 300
-  resetValues: false
-  wait: false
-  forceUpgrade: false
+  interval: 5m
   chart:
     spec:
       chart: sonarr
       version: 9.2.0
       sourceRef:
         kind: HelmRepository
-        name: k8s-at-home-charts
-        namespace: flux
-    values:
-      controllerType: deployment
-      image:
-        repository: ghcr.io/k8s-at-home/sonarr
-        tag: v3.0.4.1132
-      env:
-        TZ: 'Europe/Brussels'
-      ingress:
-        enabled: true
-        anntotations:
-          kubernetes.io/ingress.class: "nginx"
-          kubernetes.io/tls-acme: true
-          cert-manager.io/cluster-issuer: letsencrypt
-        hosts:
-          - host: sonarr.lab.kharnox.xyz
-            paths:
-              - path: /
-                pathType: Prefix
-            tls:
-              - hosts:
-                - sonarr.lab.kharnox.xyz
-                secretName: sonarr-tls
+        name: k8s-at-home
+        namespace: flux-system
+      interval: 5m
+  values:
+    controllerType: deployment
+    image:
+      repository: ghcr.io/k8s-at-home/sonarr
+      tag: v3.0.4.1132
+    env:
+      TZ: "Europe/Brussels"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "nginx"
+        kubernetes.io/tls-acme: "true"
+        cert-manager.io/cluster-issuer: letsencrypt
+      hosts:
+      - host: sonarr.lab.kharnox.xyz
+        paths:
+        - path: /
+          pathType: Prefix
+      tls:
+      - hosts:
+        - sonarr.lab.kharnox.xyz
+        secretName: sonarr-tls
