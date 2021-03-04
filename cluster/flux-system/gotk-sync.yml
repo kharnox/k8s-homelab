@@ -1,0 +1,20 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: GitRepository
+metadata:
+  name: flux-system
+  namespace: flux-system
+spec:
+  interval: 10s
+  ref:
+    branch: master
+  secretRef:
+    name: flux-system
+  url: ssh://git@github.com/kharnox/k8s-homelab
+  ignore: |
+    # exclude all
+    /*
+    # include deploy dir
+    !/cluster
+    # exclude file extensions from deploy dir
+    /cluster/**/*.md
