@@ -15,7 +15,7 @@ spec:
     spec:
       chart: sonarr
       version: 9.2.0
-      sourceref:
+      sourceRef:
         kind: HelmRepository
         name: k8s-at-home-charts
         namespace: flux
