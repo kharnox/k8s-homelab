@@ -39,5 +39,5 @@ spec:
                 pathType: Prefix
             tls:
               - hosts:
-                - sonarr.lab.kharnox.xyz
+                - sonarrr.lab.kharnox.xyz
                 secretName: sonarr-tls
