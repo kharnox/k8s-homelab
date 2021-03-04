@@ -6,7 +6,7 @@ metadata:
   namespace: entertainment
 spec:
   releaseName: sonarr
-  targetNamespace: entertainment
+  targetNamespace: flux 
   timeout: 300
   resetValues: false
   wait: false
