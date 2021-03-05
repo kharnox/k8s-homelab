@@ -36,3 +36,14 @@ spec:
       - hosts:
         - radarr.lab.kharnox.xyz
         secretName: radarr-tls
+    persistence:
+      config:
+        enabled: true
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: "20Gi"
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: OnRootMismatch
