@@ -36,6 +36,7 @@ spec:
           targetPort: 6881
         externalTrafficPolicy: Local
     ingress:
+      enabled: true
       annotations:
         kubernetes.io/ingress.class: "nginx"
       hosts:
