@@ -39,7 +39,9 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: sonarr-pvc
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: "25Gi"
     podSecurityContext:
       runAsUser: 1000
       runAsGroup: 1000
