@@ -35,4 +35,4 @@ spec:
       tls:
       - hosts:
         - sonarr.lab.kharnox.xyz
-        secretName: sonarr-tls
+        secretName: sonarr-tls-new
