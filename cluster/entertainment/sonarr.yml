@@ -36,3 +36,12 @@ spec:
       - hosts:
         - sonarr.lab.kharnox.xyz
         secretName: sonarr-tls
+    persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr-pvc
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: OnRootMismatch
