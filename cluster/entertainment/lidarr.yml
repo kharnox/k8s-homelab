@@ -36,3 +36,14 @@ spec:
       - hosts:
         - lidarr.lab.kharnox.xyz
         secretName: lidarr-tls
+    persistence:
+      config:
+        enabled: true
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: "20Gi"
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: OnRootMismatch
