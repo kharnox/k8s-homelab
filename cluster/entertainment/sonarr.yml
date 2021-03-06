@@ -28,14 +28,14 @@ spec:
         kubernetes.io/ingress.class: "nginx"
         cert-manager.io/cluster-issuer: letsencrypt 
       hosts:
-      - host: sonarr2.lab.kharnox.xyz
+      - host: sonarr.lab.kharnox.xyz
         paths:
         - path: /
           pathType: Prefix
       tls:
       - hosts:
-        - sonarr2.lab.kharnox.xyz
-        secretName: sonarr2-tls
+        - sonarr.lab.kharnox.xyz
+        secretName: sonarr-tls
     persistence:
       config:
         enabled: true
