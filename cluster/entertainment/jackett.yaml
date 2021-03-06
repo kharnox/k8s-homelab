@@ -22,7 +22,7 @@ spec:
       repository: ghcr.io/k8s-at-home/jackett
       tag: v0.17.627
     env:
-      TZ: "Europe\Brussels"
+      TZ: "Europe/Brussels"
       PUID: 1000
       PGID: 1000
     ingress:
