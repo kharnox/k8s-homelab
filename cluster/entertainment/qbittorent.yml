@@ -54,7 +54,7 @@ spec:
         enabled: true
         storageClass: "longhorn"
         accessMode: ReadWriteOnce
-        size: "20Gi"
+        size: "5Gi"
     additionalVolumeMounts:
     - name: media-nas
       mountPath: "/media"
