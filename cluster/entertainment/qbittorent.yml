@@ -44,3 +44,17 @@ spec:
         paths:
         - path: /
           pathType: Prefix
+    persistence:
+      config:
+        enabled: true
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: 20Gi
+    additionalVolumeMounts:
+    - name: media-nas
+      mountPath: "/media"
+    additionalVolumes:
+    - name: media-nas
+      persistentVolumeClaim:
+        claimName: media-nfs-share-pvc
+
