@@ -48,6 +48,7 @@ spec:
       tls:
       - hosts:
         - qbittorrent.lab.kharnox.xyz
+        secretName: qbittorrent-tls
     persistence:
       config:
         enabled: true
