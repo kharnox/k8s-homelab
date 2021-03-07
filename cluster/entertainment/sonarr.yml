@@ -47,3 +47,10 @@ spec:
       runAsGroup: 1000
       fsGroup: 1000
       fsGroupChangePolicy: OnRootMismatch
+      additionalVolumeMounts:
+    - name: media-nas
+      mountPath: "/media"
+    additionalVolumes:
+    - name: media-nas
+      persistentVolumeClaim:
+        claimName: media-nfs-share-pvc
