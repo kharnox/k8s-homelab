@@ -1,0 +1,30 @@
+i---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: media-nfs-tank-share-pv
+spec:
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  claimRef:
+    name: media-nfs-share-pvc
+    namespace: media
+  storageClassName: nfs
+  nfs:
+    server: truenas.lab.kharnox.xyz
+    path: "/mnt/main/k3s_share"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: media-nfs-share-pvc
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs
+  resources:
+    requests:
+      storage: 1Mi
