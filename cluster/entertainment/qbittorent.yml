@@ -54,7 +54,7 @@ spec:
         enabled: true 
         storageClass: "longhorn"
         accessMode: ReadWriteOnce
-        size: "10Gi"
+        size: "5Gi"
     podSecurityContext:
       runAsUser: 1000
       runAsGroup: 1000
