@@ -23,7 +23,7 @@ spec:
     ingress:
       enabled: true
       annotations:
-        kubernetes.io/ingress.class: "nginxi"
+        kubernetes.io/ingress.class: "nginx"
         cert-manager.io/cluster-issuer: letsencrypt
       hosts:
       - "plex.lab.kharnox.xyz"
@@ -43,17 +43,13 @@ spec:
       - 10.0.1.182
       externalTrafficPolicy: Local
     persistence:
+      transcode:
+        enabled: false
+      data:
+        enabled: true
+        claimName: media-nfs-share-pvc
       config:
         enabled: true
         storageClass: "longhorn"
         size: 250Gi
         accessMode: ReadWriteOnce
-      transcode:
-        enabled: false
-        emptyDir:
-          medium: "Memory"
-      data:
-        enabled: false
-      extraMounts:
-      - name: nfs-share
-        claimName: media-nfs-share-pvc
