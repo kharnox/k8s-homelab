@@ -51,10 +51,15 @@ spec:
         secretName: qbittorrent-tls
     persistence:
       config:
-        enabled: false
-        # storageClass: "longhorn"
-        # accessMode: ReadWriteOnce
-        # size: "5Gi"
+        enabled: true 
+        storageClass: "longhorn"
+        accessMode: ReadWriteOnce
+        size: "5Gi"
+    podSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: onRootMismatch
     additionalVolumeMounts:
     - name: media-nas
       mountPath: "/media"
