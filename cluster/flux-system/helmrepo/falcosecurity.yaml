@@ -5,6 +5,6 @@ metadata:
   name: falcosecurity
   namespace: flux-system
 spec: 
-  interval: m
+  interval: 10m
   url: https://falcosecurity.github.io/charts 
   timeout: 3m
