@@ -113,3 +113,5 @@ spec:
       enabled: true
       storageClass: "longhorn"
       size: "20Gi"
+      accessModes:
+      - ReadWriteOnce
