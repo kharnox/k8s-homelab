@@ -8,7 +8,6 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://grafana.github.io/helm-charts
       chart: grafana
       version: 6.6.1
       sourceRef:
@@ -37,8 +36,6 @@ spec:
         mode: console
       grafana_net:
         url: https://grafana.net
-      auth.basic:
-        disable_login_form: false
     dashboardProviders:
       dashboardproviders.yaml:
         apiVersion: 1
