@@ -111,7 +111,7 @@ spec:
         - "grafana-test.lab.kharnox.xyz"
     persistence:
       enabled: true
-      storageClass: "longhorn"
+      storageClassName: "longhorn"
       size: "20Gi"
       accessModes:
       - ReadWriteOnce
