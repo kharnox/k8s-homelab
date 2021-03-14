@@ -109,6 +109,7 @@ spec:
       tls:
       - hosts:
         - "grafana-test.lab.kharnox.xyz"
+        secretName: grafana-test-tls
     persistence:
       enabled: true
       storageClassName: "longhorn"
