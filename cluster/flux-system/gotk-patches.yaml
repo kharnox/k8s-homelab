@@ -11,4 +11,8 @@ spec:
         - name: manager
           resources:
             limits:
-              memory: 2Gi
+              cpu: 1000m
+              #memory: 1Gi
+            requests:
+              cpu: 50m
+              #memory: 64Mi
