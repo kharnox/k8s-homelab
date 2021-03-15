@@ -147,10 +147,3 @@ spec:
         thanos:
           image: quay.io/thanos/thanos:v0.17.2
           version: v0.17.2
-          objectStorageConfig:
-            name: thanos
-            key: object-store.yaml
-  valuesFrom:
-  - kind: Secret
-    name: "kube-prometheus-stack-helm-values"
-    optional: false
