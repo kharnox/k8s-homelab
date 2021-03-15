@@ -11,7 +11,7 @@ spec:
   claimRef:
     name: media-nfs-share-pvc
     namespace: media 
-  storageClassName: nfs-client
+  storageClassName: nfs
   nfs:
     server: truenas.lab.kharnox.xyz
     path: "/mnt/main/k3s_share"
@@ -24,7 +24,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs-client
+  storageClassName: nfs
   resources:
     requests:
       storage: 1Mi
