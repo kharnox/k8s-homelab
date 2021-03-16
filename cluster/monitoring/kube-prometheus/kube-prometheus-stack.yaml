@@ -48,7 +48,7 @@ spec:
         - key: "arm"
           operator: "Exists"
         - key: "CriticalAddonsOnly"
-          operator; "Exists"
+          operator: "Exists"
       ingress:
         enabled: true
         annotations:
