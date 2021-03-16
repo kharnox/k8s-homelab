@@ -141,6 +141,11 @@ spec:
         retention: 6h
         enableAdminAPI: true
         walCompression: true
+        additionalScrapeConfigs:
+        - job_name: 'node-exporter'
+          static_config:
+          - targets:
+            - 10.0.1.254:9100 # Opnsense
         storageSpec:
           volumeClaimTemplate:
             spec:
